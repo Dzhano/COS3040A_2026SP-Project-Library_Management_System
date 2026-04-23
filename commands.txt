@@ -1,0 +1,28 @@
+# -- Those are comments for our notes and instructions.
+# You can enter the following types of commands:
+#    "CheckIfLate {MM/DD/YYYY}" - checks whether each item is late depending on the provided date
+#    "DegradeCondition all/{specific ID} ./{type of Condition}" - degrades the condition of a specific physical item or all of them
+#    "CalculateLateFee {specific ID}/all {MM/DD/YYYY}" - calculates the late fee of a specific item or all of them
+#    "GetCodeExpirationDate {specific ID}/all" - gets the expiration date of the electronic item(s) code after which it won't work anymore
+#    "GetsStolen {specific ID}/all" - a specific physical item or all of them are considered stolen from the library
+#    "Display physicals / electronics / books / ebooks / magazines / DVDs / softwares / late / all / everything" - displays on the command window the desired output of data
+#    "Show physicals / electronics / books / ebooks / magazines / DVDs / softwares / late / all / everything" - displays on the command window the desired output of data # Same as the previous one
+#    "End program" - stops the acceptance of new commands
+
+# Anything else written will not be accepted and the program will ask you for a new commands without doing anything beforehand.
+
+
+# Sample command data. You can edit it, as well as upload a new one in correspondence to the rules above. Otherwise, the program may crash and/or save the data with wrong values at places (less likely).
+
+CheckIfLate 03/24/2024
+KMP Adobe
+KMP 3
+CheckIfLate 10/24/20w2  # Shouldn't work as the date is not correctly written.
+CalculateLateFee 123789 05/02/2024
+Display electronics
+GetsStolen 123456
+DegradeCondition 9780061120084 .
+DegradeCondition 9780061120084 Ill
+DegradeCondition 123456 .
+DegradeCondition 123789 Good
+GetCodeExpirationDate all

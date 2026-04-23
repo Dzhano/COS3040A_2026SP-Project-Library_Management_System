@@ -1,0 +1,35 @@
+# This is the file where the items can uploaded according to their types.
+# You must follow the standard protocol on how the information for each of them must be uploaded (order, number of data, type, etc.)
+# If the item type is not one of the following - Book, Ebook, Magazine, DVD or Software - the program will not accept it.
+
+# Date input format for:
+# Book, "name", ID, "description", author_names, genre, year, pages, release_date, reservation_date, return_date, condition
+
+# Ebook, "name", ID, "description", author_names, genre, year, size_in_MB, release_date, reservation_date, return_date, expiration_date
+
+# Magazine, "name", ID, "description", publisher, issueNumber, release_date, reservation_date, return_date, condition
+
+# DVD, "name", ID, "description", director_names, genre, year, duration, releaseDate, reservation_date, return_date, condition
+
+# Software, "name", ID, "description", developer, username, subscription_plan, usage_time, release_date, reservation_date, return_date, expiration_date
+
+#
+
+# Warning: Names of the authors should be in the following format: firstName lastName   # Otherwise the program can crash.
+#          Year of the physical item should not be negative number! It should be the same year as the one in release date.
+#          Condition of a physical item should be from the following: New, Good, Average, Bad, OnTheVergeOfCollapsing or Stolen
+#          Subscription of an electronical items should be from the following: Free, Basic, Standard or Premium
+#          If a specific data is missing, then the program may crash!
+# Please upload correct information!
+
+
+
+
+# Sample item data. You can edit it, as well as upload a new one in correspondence to the rules above. Otherwise, the program will crash for real and/or may save the data with wrong values at places (less likely).
+
+Book, "To Kill a Mockingbird", 9780061120084, "Harper Lee's Pulitzer Prize-winning novel set in the American South during the 1930s.", Harper Lee, Fiction, 1960, 143, 07/11/1960, 02/29/2024, 04/12/2024, Good
+Magazine, "National Geographic", 123456, "Explore the wonders of our world through stunning photography and insightful articles.", National Geographic Society, 1234, 03/01/2024, 03/29/2024, 03/29/2024, Average
+Software, "Adobe Photoshop", 543210, "Industry-standard software for image editing and graphic design.", "Adobe", user456, Premium, 40, 09/30/1990, 03/29/2024, 04/10/2024, 09/30/2025
+Software, "Microsoft Office", 1234567, "Essential productivity suite for creating documents, spreadsheets, and presentations.", "Microsoft", user123, Premium, 324000, 10/21/2021, 03/29/2024, 06/06/2024, 07/21/2024
+Ebook, "The Great Gatsby", 9780743273565, "F. Scott Fitzgerald's classic tale of the Jazz Age and the American Dream.", F. Scott Fitzgerald, Fiction, 1925, 255, 04/10/1925, 03/12/2024, 08/19/2024, 05/10/2024
+DVD, "Pulp Fiction", 123789, "Quentin Tarantino's groundbreaking film intertwining various storylines in Los Angeles.", Quentin Tarantino, Crime, 1994, 154, 10/14/1994, 01/29/2024, 04/12/2024, On the verge of collapse

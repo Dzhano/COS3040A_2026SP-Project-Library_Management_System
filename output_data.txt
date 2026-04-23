@@ -1,0 +1,76 @@
+Item 9780061120084 data:
+Name: To Kill a Mockingbird
+Description: Harper Lee's Pulitzer Prize-winning novel set in the American South during the 1930s.
+Type: Book
+Release Date: 07/11/1960
+Reservation Date: 02/29/2024
+Return Date: 04/12/2024
+Physical Condition: Average
+Author: Harper Lee
+Genre: Fiction
+Year: 1960
+Pages: 143
+
+Item 123456 data:
+Name: National Geographic
+Description: Explore the wonders of our world through stunning photography and insightful articles.
+Type: Magazine
+Release Date: 03/01/2024
+Reservation Date: 03/29/2024
+Return Date: 03/29/2024
+Physical Condition: Stolen
+Publisher: National Geographic Society
+Issue Number: 1234
+
+Item 543210 data:
+Name: Adobe Photoshop
+Description: Industry-standard software for image editing and graphic design.
+Type: Software
+Release Date: 09/30/1990
+Reservation Date: 03/29/2024
+Return Date: 04/10/2024
+Expiration Date: 09/30/2025
+Developer: Adobe
+Username: user456
+Subscription Plan: Premium
+Usage Time: 40 minutes
+
+Item 1234567 data:
+Name: Microsoft Office
+Description: Essential productivity suite for creating documents, spreadsheets, and presentations.
+Type: Software
+Release Date: 10/21/2021
+Reservation Date: 03/29/2024
+Return Date: 06/06/2024
+Expiration Date: 07/21/2024
+Developer: Microsoft
+Username: user123
+Subscription Plan: Premium
+Usage Time: 324000 minutes
+
+Item 9780743273565 data:
+Name: The Great Gatsby
+Description: F. Scott Fitzgerald's classic tale of the Jazz Age and the American Dream.
+Type: Ebook
+Release Date: 04/10/1925
+Reservation Date: 03/12/2024
+Return Date: 08/19/2024
+Expiration Date: 05/10/2024
+Author: F. Scott Fitzgerald
+Genre: Fiction
+Year: 1925
+Size: 255MB
+
+Item 123789 data:
+Name: Pulp Fiction
+Description: Quentin Tarantino's groundbreaking film intertwining various storylines in Los Angeles.
+Type: DVD
+Release Date: 10/14/1994
+Reservation Date: 01/29/2024
+Return Date: 04/12/2024
+Physical Condition: On The Verge Of Collapse
+Director: Quentin Tarantino
+Genre: Crime
+Year: 1994
+Duration: 154 minutes
+
