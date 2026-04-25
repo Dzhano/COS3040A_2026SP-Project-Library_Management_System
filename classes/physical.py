@@ -5,6 +5,10 @@ from functions import days_between_two_dates
 from classes.item import Item
 
 class Condition(Enum):
+    """ 
+    Represents the physical condition of an item. 
+    The quality of a physical item can degrade over time, and this enum helps to track that. 
+    """
     NEW = 1
     GOOD = 2
     AVERAGE = 3
@@ -33,9 +37,9 @@ class Physical(Item, ABC):
         self.condition = condition
         self.physical = True  # Explicitly set physical to True for this subclass
 
+    """ The physical condition of the item. It takes from the Condition enum. """
     @property
     def condition(self) -> Condition:
-        # Gets the physical condition of the item.
         return self._condition
 
     @condition.setter
@@ -64,7 +68,7 @@ class Physical(Item, ABC):
                 raise ValueError("New condition must be worse than the current condition.")
     
     def gets_stolen(self):
-        """ Marks the item as stolen, which is the worst condition. """
+        """ Marks the item as stolen, which is the worst condition. It cannot be degraded further or marked as not stolen (another condition). """
         self._condition = Condition.STOLEN
     
     def is_stolen(self) -> bool:

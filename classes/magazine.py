@@ -20,6 +20,7 @@ class Magazine(Physical):
 
 
 
+    """ The name of the publisher of the magazine. """
     @property
     def publisher(self) -> str:
         return self._publisher
@@ -31,6 +32,7 @@ class Magazine(Physical):
         self._publisher = value
 
 
+    """ The issue number of the magazine. """
     @property
     def issue_number(self) -> int:
         return self._issue_number

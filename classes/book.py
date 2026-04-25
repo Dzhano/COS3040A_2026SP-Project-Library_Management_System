@@ -5,6 +5,7 @@ class Book(Physical):
     """
     Represents a book in the library.
     Inherits from the Physical class, which represents physical items in the library.
+    It has similar properties to Ebook, but also includes physical attributes like condition and late fee calculation specific to physical items.
     """
 
     def __init__(self, item_id: str = "", name: str = "", description: str = "", 
@@ -21,7 +22,7 @@ class Book(Physical):
         self.type = "Book"  # Set the type to "Book" for this subclass
 
 
-
+    """ The author of the book. """
     @property
     def author(self) -> str:
         return self._author
@@ -33,6 +34,7 @@ class Book(Physical):
         self._author = value
 
 
+    """ The genre of the book. """
     @property
     def genre(self) -> str:
         return self._genre
@@ -44,6 +46,7 @@ class Book(Physical):
         self._genre = value
 
 
+    """ The year the book was published. """
     @property
     def year(self) -> int:
         return self._year
@@ -55,6 +58,7 @@ class Book(Physical):
         self._year = value
 
 
+    """ The number of pages in the book. How big the book is. """
     @property
     def pages(self) -> int:
         return self._pages

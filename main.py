@@ -14,7 +14,7 @@ from classes.software import Subscription
 ids = set()  # To track unique IDs
 
 def parse_item_line(line: str):
-    # Parses a line from the .txt file and returns the corresponding Item object.
+    """ Parses a line from the .txt file and returns the corresponding Item object. """
     
     try:
         # Remove any trailing comments on the line (e.g., "# Failed years")
@@ -96,10 +96,15 @@ def parse_item_line(line: str):
         return None
     
 def process_command(input_command: str):
+    """
+    Processes a command entered by the user or read from the commands.txt file. 
+    It is the backbone of the program as it connects the user input to the functionalities of the items.
+    """
     command = input_command.strip().split()
     if not command: return True
 
     if command[0] == "GetsStolen":
+        """ This command marks a specific physical item or all physical items as stolen."""
         target = command[1] if len(command) > 1 else "all"
         count = 0
         for item in items:
@@ -110,6 +115,7 @@ def process_command(input_command: str):
         print(f"Marked {count} physical item(s) as stolen.\n")
     
     elif command[0] == "DegradeCondition":
+        """ This command degrades the condition of a specific physical item or all physical items. """
         target = command[1] if len(command) > 1 else "all"
         # Check if a specific condition was provided (e.g., ./BAD)
         condition = None
@@ -133,6 +139,7 @@ def process_command(input_command: str):
         print(f"Degraded condition for {count} physical item(s).\n")
     
     elif command[0] == "CalculateLateFee": 
+        """ This command calculates the late fee of a specific item or all items based on the provided date and type of item. """
         if len(command) < 3:
             print("Usage: CalculateLateFee {ID}/all {MM/DD/YYYY}\n")
             return True
@@ -158,6 +165,7 @@ def process_command(input_command: str):
             print(f"Total Late Fees owed to the library: ${total_fee:.2f}\n")
     
     elif command[0] == "GetCodeExpirationDate":
+        """ This command retrieves the expiration date of a specific electronic item or all electronic items. """
         target = command[1] if len(command) > 1 else "all"
         for item in items:
             if isinstance(item, Electronic):
@@ -166,6 +174,7 @@ def process_command(input_command: str):
         print("\n")
     
     elif command[0] == "CheckIfLate":
+        """ This command checks if a specific item or all items are late based on the provided date. """
         if len(command) < 2:
             print("Usage: CheckIfLate {MM/DD/YYYY}\n")
             return True
@@ -184,6 +193,7 @@ def process_command(input_command: str):
         print('\n')
    
     elif command[0] == "Display" or command[0] == "Show":
+        """ Displays items in the terminal based on the specified type or all items if no type is given. """
         # DATA FILTERING
         target_type = command[1] if len(command) > 1 else "all"
         filtered_items = []

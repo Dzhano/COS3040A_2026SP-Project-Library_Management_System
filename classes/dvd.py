@@ -23,6 +23,7 @@ class DVD(Physical):
 
 
 
+    """ The name of the director of the DVD. """
     @property
     def director(self) -> str:
         return self._director
@@ -34,6 +35,7 @@ class DVD(Physical):
         self._director = value
 
     
+    """ The genre of the DVD. It can be any type - action, comedy, horror, etc. """
     @property
     def genre(self) -> str:
         return self._genre
@@ -45,6 +47,7 @@ class DVD(Physical):
         self._genre = value
 
     
+    """ The year the DVD was released. Not the movie, but the physical DVD itself. """
     @property
     def year(self) -> int:
         return self._year
@@ -56,6 +59,7 @@ class DVD(Physical):
         self._year = value
     
 
+    """ The duration of the DVD in minutes. """
     @property
     def duration(self) -> int:
         return self._duration

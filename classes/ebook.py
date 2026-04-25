@@ -3,7 +3,8 @@ from classes.electronic import Electronic
 class Ebook(Electronic):
     """
     Represents a book in the library.
-    Inherits from the Physical class, which represents electronic items in the library.
+    Inherits from the Electronic class, which represents electronic items in the library.
+    It has similar properties to Book, but also includes electronic attributes like file size and expiration date specific to electronic items.
     """
 
     def __init__(self, id: str = "", name: str = "", description: str = "",
@@ -21,6 +22,7 @@ class Ebook(Electronic):
 
 
 
+    """ The author of the book. """
     @property
     def author(self) -> str:
         return self._author
@@ -32,6 +34,7 @@ class Ebook(Electronic):
         self._author = value
 
 
+    """ The genre of the book. """
     @property
     def genre(self) -> str:
         return self._genre
@@ -43,6 +46,7 @@ class Ebook(Electronic):
         self._genre = value
 
 
+    """ The year the book was published. """
     @property
     def year(self) -> int:
         return self._year
@@ -54,6 +58,12 @@ class Ebook(Electronic):
         self._year = value
 
 
+    """
+    The size of the ebook file. 
+    Due to it being an electronic item, it has a file size in MB instead of physical pages. 
+    Different devices may have different screen sizes, changing the reading experience, 
+    but the file size is a consistent measure of the ebook's content.
+    """
     @property
     def size(self) -> int:
         return self._size

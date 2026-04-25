@@ -18,6 +18,7 @@ class Electronic(Item, ABC):
         self.physical = False  # Explicitly set physical to False for this subclass
 
 
+    """ The expiration date for electronic items that indicates when the license for the software or digital content will expire. """
     @property
     def expiration_date(self) -> str:
         # Gets the license expiration date.

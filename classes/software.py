@@ -2,6 +2,10 @@ from classes.electronic import Electronic
 from enum import Enum
 
 class Subscription(Enum):
+    """
+    Represents the subscription plan for a software item.
+    Different subscription plans may have different features and limitations, and this enum helps to track that.
+    """
     Free = 1
     Basic = 2
     Standard = 3
@@ -25,6 +29,7 @@ class Software(Electronic):
         self.type = "Software"  # Set the type to "Software" for this subclass
 
 
+    """ The developer of the software item. The name of the company or individual who developed the software. """
     @property
     def developer(self) -> str:
         return self._developer
@@ -34,9 +39,9 @@ class Software(Electronic):
         self._developer = value
 
     
+    """ The username of the person who rented the software item. """
     @property
     def username(self) -> str:
-        """ Gets the username of the person who rented the software item. """
         return self._username
     
     @username.setter
@@ -44,6 +49,7 @@ class Software(Electronic):
         self._username = value
 
 
+    """ The subscription plan of the software item. It takes from the Subscription enum. """
     @property
     def subscription_plan(self) -> Subscription:
         return self._subscription_plan
@@ -53,9 +59,9 @@ class Software(Electronic):
         self._subscription_plan = value
     
 
+    """ The usage time of the software item in minutes. How long the user has used the software. """
     @property
     def usage_time(self) -> int:
-        # Gets the usage time of the software item in minutes.
         return self._usage_time
     
     @usage_time.setter

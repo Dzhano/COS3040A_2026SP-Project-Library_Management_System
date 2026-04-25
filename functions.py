@@ -1,5 +1,15 @@
 import re
 
+""" 
+The regex pattern is designed to validate dates in the format 'MM/DD/YYYY' 
+while ensuring that the date is valid according to the calendar rules. 
+It checks for:
+- Months with 31 days (January, March, May, July, August, October, December) allowing days from 01 to 31.
+- Months with 30 days (April, June, September, November) allowing days from 01 to 30.
+- February allowing days from 01 to 28 for non-leap years and 29 for leap years.
+- Leap years are determined by the rules: a year is a leap year if it is divisible by 4, but not by 100 unless it is also divisible by 400. 
+  This regex accounts for leap years up to the year 2099. 
+"""
 regex = r"^((0[13578]|1[02])\/(0[1-9]|[12][0-9]|3[01])\/((01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20)[0-9]{2}))|((0[469]|11)\/(0[1-9]|[12][0-9]|30)\/(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20)[0-9]{2})|((02)\/(0[1-9]|1[0-9]|2[0-8])\/(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20)[0-9]{2})|((02)\/29\/(((01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$"
 
 

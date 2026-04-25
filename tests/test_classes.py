@@ -10,10 +10,7 @@ from classes.ebook import Ebook
 class TestClasses(TestCase):
 
     def setUp(self):
-        """
-        Sets up fresh objects using POSITIONAL arguments to avoid any naming crashes.
-        The order matches exactly how you wrote your __init__ functions.
-        """
+        """  Sets up a variety of test objects for use in the test cases. """
         # Book order: id, name, desc, author, genre, year, pages, release date, reservation date, return date, condition
         self.book1 = Book(
             "B001", "Old Book", "A classic.", "John Doe", "Fiction", 

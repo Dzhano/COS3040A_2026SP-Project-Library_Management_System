@@ -4,6 +4,9 @@ from functions import is_valid_date_format, separate_date
 
 
 class Item(ABC):
+    """
+    Represents a generic item in the library.
+    """
     def __init__(self, id: str = "", name: str = "", description: str = "", 
                  release_date: str = "", reservation_date: str = "", return_date: str = ""):
         # Assigning through setters to trigger validation immediately
@@ -18,7 +21,10 @@ class Item(ABC):
         self.physical = True  # Default to physical, can be overridden by child classes
 
 
-
+    """
+    Gets the unique ID of the item. The ID is a string that uniquely identifies the item in the library.
+    The ID must be a non-empty string. This ensures that every item can be uniquely identified and prevents issues with empty or invalid IDs
+    """
     @property
     def id(self) -> str: # Makes sure the ID is a string and not empty
         return self._id
@@ -30,6 +36,10 @@ class Item(ABC):
         self._id = value
 
 
+    """
+    The name of the item.
+    While ID is unique and cannot be repeated, the name can be shared among multiple items (e.g., multiple copies of the same book).
+    """
     @property
     def name(self) -> str:
         return self._name
@@ -41,6 +51,7 @@ class Item(ABC):
         self._name = value
 
     
+    """ The description of the item, which provides additional details about it. """
     @property
     def description(self) -> str:
         return self._description
@@ -52,6 +63,10 @@ class Item(ABC):
         self._description = value
 
 
+    """ 
+    The type of the item, which can be used to distinguish between different categories (e.g., book, DVD).
+    It is automatically set by the child classes to reflect the specific type of item they represent.
+    """
     @property
     def type(self) -> str:
         return self._type
@@ -63,6 +78,7 @@ class Item(ABC):
         self._type = value
 
 
+    """ The release date of the item, which indicates when it was made available in the library. """
     @property
     def release_date(self) -> str:
         return self._release_date
@@ -75,7 +91,8 @@ class Item(ABC):
             raise ValueError("Release date must be in the format MM/DD/YYYY.")
         self._release_date = value
 
-    
+
+    """ The reservation date of the item, which indicates when it was taken out. """
     @property
     def reservation_date(self) -> str:
         return self._reservation_date
@@ -87,6 +104,7 @@ class Item(ABC):
         self._reservation_date = value
 
     
+    """ The return date of the item, which indicates when it is due back to the library. """
     @property
     def return_date(self) -> str:
         return self._return_date
@@ -113,6 +131,7 @@ class Item(ABC):
         """
         Overloads the equality operator (==) to compare items by their unique ID.
         This allows us to check if two items are the same based on their ID.
+        If two items have the same ID, they are considered equal, regardless of their other attributes.
         """
         if not isinstance(other, Item):
             return NotImplemented
@@ -146,6 +165,10 @@ class Item(ABC):
         pass
 
     def __str__(self):
+        """
+        Returns a string representation of the item, including its specific details based on its type. 
+        This can be used for displaying item information in a user-friendly format. 
+        """
         output = f"Item {self.id} data:\n" 
         output += f"Name: {self.name}\nDescription: {self.description}\nType: {self.type}\n" 
         output += f"Release Date: {self.release_date}\nReservation Date: {self.reservation_date}\nReturn Date: {self.return_date}"
