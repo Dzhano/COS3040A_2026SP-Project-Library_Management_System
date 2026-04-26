@@ -195,9 +195,9 @@ def process_command(input_command: str):
         for item in items:
             if target_type in ["all", "everything"]:
                 filtered_items.append(item)
-            elif target_type == "physicals" and isinstance(item, Physical):
+            elif target_type == "physicals" and item.is_physical():
                 filtered_items.append(item)
-            elif target_type == "electronics" and isinstance(item, Electronic):
+            elif target_type == "electronics" and not item.is_physical():
                 filtered_items.append(item)
             elif target_type == "books" and item.type == "Book":
                 filtered_items.append(item)
@@ -221,9 +221,6 @@ def process_command(input_command: str):
                 print(item)
                 print("\n")
         print("-" * 35 + "\n")
-    
-    elif command[0] == "Show" and len(command) > 1 and command[1] == "commands":
-        print(command_message)
     
     else:
         print(f"The command {input_command.strip()} is not valid. Please try again.\n")
