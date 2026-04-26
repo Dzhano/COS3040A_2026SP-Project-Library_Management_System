@@ -10,8 +10,8 @@ class Electronic(Item, ABC):
     Inherits from the abstract Item class.
     """
 
-    def __init__(self, id: str = "", name: str = "", description: str = "", 
-                 release_date: str = "", reservation_date: str = "", return_date: str = "", expiration_date: str = ""):
+    def __init__(self, id: str, name: str, description: str, 
+                 release_date: str, reservation_date: str, return_date: str, expiration_date: str):
         super().__init__(id, name, description, release_date, reservation_date, return_date)
         self.type = "Electronic"
         self.expiration_date = expiration_date

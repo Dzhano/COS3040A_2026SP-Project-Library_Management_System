@@ -7,8 +7,8 @@ class Item(ABC):
     """
     Represents a generic item in the library.
     """
-    def __init__(self, id: str = "", name: str = "", description: str = "", 
-                 release_date: str = "", reservation_date: str = "", return_date: str = ""):
+    def __init__(self, id: str, name: str, description: str, 
+                 release_date: str, reservation_date: str, return_date: str):
         # Assigning through setters to trigger validation immediately
         self.id = id
         self.name = name

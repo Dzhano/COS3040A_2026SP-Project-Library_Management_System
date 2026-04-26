@@ -29,9 +29,9 @@ class Physical(Item, ABC):
     Inherits from the abstract Item class.
     """
 
-    def __init__(self, id: str = "", name: str = "", description: str = "", 
-                 release_date: str = "", reservation_date: str = "", return_date: str = "", 
-                 condition: Condition = Condition.NEW):
+    def __init__(self, id: str, name: str, description: str, 
+                 release_date: str, reservation_date: str, return_date: str, 
+                 condition: Condition):
         super().__init__(id, name, description, release_date, reservation_date, return_date)
         self.type = "Physical"
         self.condition = condition

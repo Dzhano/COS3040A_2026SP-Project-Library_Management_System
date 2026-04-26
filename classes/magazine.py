@@ -7,10 +7,10 @@ class Magazine(Physical):
     Inherits from the Physical class, which represents physical items in the library.
     """
 
-    def __init__(self, id: str = "", name: str = "", description: str = "", 
-                 publisher: str = "", issue_number: int = 0,
-                 release_date: str = "", reservation_date: str = "", return_date: str = "", 
-                 condition: Condition = Condition.NEW):
+    def __init__(self, id: str, name: str, description: str, 
+                 publisher: str, issue_number: int,
+                 release_date: str, reservation_date: str, return_date: str, 
+                 condition: Condition):
         super().__init__(id, name, description, release_date, reservation_date, return_date, condition)
         
         self.publisher = publisher

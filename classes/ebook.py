@@ -7,10 +7,10 @@ class Ebook(Electronic):
     It has similar properties to Book, but also includes electronic attributes like file size and expiration date specific to electronic items.
     """
 
-    def __init__(self, id: str = "", name: str = "", description: str = "",
-                  author: str = "", genre: str = "", year: int = 2026, size: int = 0,
-                  release_date: str = "", reservation_date: str = "", return_date: str = "", 
-                  expiration_date: str = ""): 
+    def __init__(self, id: str, name: str, description: str,
+                  author: str, genre: str, year: int, size: int,
+                  release_date: str, reservation_date: str, return_date: str, 
+                  expiration_date: str): 
         super().__init__(id, name, description, release_date, reservation_date, return_date, expiration_date)
         
         self.author = author

@@ -17,9 +17,9 @@ class Software(Electronic):
     Inherits from the Electronic class, which represents electronic items in the library.
     """
 
-    def __init__(self, id: str = "", name: str = "", description: str = "", 
-                 developer: str = "", username: str = "", subscription: Subscription = Subscription.Free, time: int = 0,
-                 release_date: str = "", reservation_date: str = "", return_date: str = "", expiration_date: str = ""):
+    def __init__(self, id: str, name: str, description: str, 
+                 developer: str, username: str, subscription: Subscription, time: int,
+                 release_date: str, reservation_date: str, return_date: str, expiration_date: str):
         super().__init__(id, name, description, release_date, reservation_date, return_date, expiration_date)
         self.developer = developer
         self.username = username

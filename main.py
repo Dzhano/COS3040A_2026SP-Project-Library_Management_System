@@ -2,7 +2,7 @@ import os, csv, sys
 
 from functions import is_valid_date_format
 
-from classes.physical import Physical, Condition
+from classes.physical import Physical, Condition, condition_from_string
 from classes.book import Book
 from classes.magazine import Magazine
 from classes.software import Software
@@ -43,16 +43,6 @@ def parse_item_line(line: str):
     except Exception as e:
         print("Error details: ", e)
         return None
-    
-    # Helper dictionary to safely map text conditions to the Enum
-    condition_map = {
-        "NEW": Condition.NEW,
-        "GOOD": Condition.GOOD,
-        "AVERAGE": Condition.AVERAGE,
-        "BAD": Condition.BAD,
-        "ON THE VERGE OF COLLAPSE": Condition.ON_THE_VERGE_OF_COLLAPSE,
-        "STOLEN": Condition.STOLEN
-    }
 
     try:
         if item_type == "Book" or item_type == "Ebook":
@@ -60,7 +50,7 @@ def parse_item_line(line: str):
             author, genre, year, pages, release_date, reservation_date, return_date, condition_str = parts[4:12]
 
             if item_type == "Book":
-                condition = condition_map.get(condition_str.upper().strip(), Condition.NEW)
+                condition = condition_from_string(condition_str.upper().strip())
                 return Book(item_id, name, description, author, genre, int(year), int(pages), release_date, reservation_date, return_date, condition)
             elif item_type == "Ebook":
                 return Ebook(item_id, name, description, author, genre, int(year), int(pages), release_date, reservation_date, return_date, condition_str)
@@ -68,13 +58,13 @@ def parse_item_line(line: str):
         elif item_type == "DVD":
             # DVD format: DVD, "name", ID, "description", director, genre, year, duration, release_date, reservation_date, return_date, condition
             director, genre, year, duration, release_date, reservation_date, return_date, condition_str = parts[4:12]
-            condition = condition_map.get(condition_str.upper().strip(), Condition.NEW)
+            condition = condition_from_string(condition_str.upper().strip())
             return DVD(item_id, name, description, director, genre, int(year), int(duration), release_date, reservation_date, return_date, condition)
 
         elif item_type == "Magazine":
             # Magazine format: Magazine, "name", ID, "description", publisher, issue_number, release_date, reservation_date, return_date, condition
             publisher, issue_num, release_date, reservation_date, return_date, cond_str = parts[4:10]
-            condition = condition_map.get(cond_str.upper().strip(), Condition.NEW)
+            condition = condition_from_string(cond_str.upper().strip())
             return Magazine(item_id, name, description, publisher, int(issue_num), release_date, reservation_date, return_date, condition)
 
         elif item_type == "Software":
@@ -239,6 +229,8 @@ def process_command(input_command: str):
         print(f"The command {input_command.strip()} is not valid. Please try again.\n")
 
 if __name__ == "__main__":
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     print("Welcome to our library program! Here you can upload the collection of items contained in your library.")
     print("In order to add items to the system you need to fill the \"items.txt\" file with the information regarding each physical and electronical item or put your file following the following instructions.")
     print("WARNING! Read the instructions beforehand in the above mentioned \"items.txt\" file to avoid any unnecessary program exceptions. Also, please fill an appropriate data (no negative years, unallowed conditions, etc.).")

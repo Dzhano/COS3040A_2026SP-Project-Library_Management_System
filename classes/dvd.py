@@ -10,10 +10,10 @@ class DVD(Physical):
     due to it having a physical box and disc and the fact that it can be damaged or stolen.
     """
 
-    def __init__(self, id: str = "", name: str = "", description: str = "", 
-                 director: str = "", genre: str = "", year: int = 2026, duration: int = 0,
-                 release_date: str = "", reservation_date: str = "", return_date: str = "", 
-                 condition: Condition = Condition.NEW):
+    def __init__(self, id: str, name: str, description: str, 
+                 director: str, genre: str, year: int, duration: int,
+                 release_date: str, reservation_date: str, return_date: str, 
+                 condition: Condition):
         super().__init__(id, name, description, release_date, reservation_date, return_date, condition)
         self.type = "DVD"
         self.director = director

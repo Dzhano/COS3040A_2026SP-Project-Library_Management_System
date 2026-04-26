@@ -8,10 +8,10 @@ class Book(Physical):
     It has similar properties to Ebook, but also includes physical attributes like condition and late fee calculation specific to physical items.
     """
 
-    def __init__(self, item_id: str = "", name: str = "", description: str = "", 
-                 author: str = "", genre: str = "", year: int = 2026, pages: int = 0,
-                 release_date: str = "", reservation_date: str = "", return_date: str = "", 
-                 condition: Condition = Condition.NEW):
+    def __init__(self, item_id: str, name: str, description: str, 
+                 author: str, genre: str, year: int, pages: int,
+                 release_date: str, reservation_date: str, return_date: str, 
+                 condition: Condition):
         super().__init__(item_id, name, description, release_date, reservation_date, return_date, condition)
         
         self.author = author
